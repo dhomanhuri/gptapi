@@ -276,7 +276,7 @@ app.use((req, res) =>
 );
 
 // Start the server and the session ID refresh loop
-app.listen(port, () => {
+app.listen(port, "0.0.0.0", () => {
     console.log(`💡 Server is running at http://localhost:${port}`);
     console.log();
     console.log(`🔗 Base URL: http://localhost:${port}/v1`);
