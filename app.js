@@ -4,6 +4,7 @@ const axios = require("axios");
 const https = require("https");
 const { randomUUID } = require("crypto");
 
+var cors = require("cors");
 // Constants for the server and API configuration
 const port = 3040;
 const baseUrl = "https://chat.openai.com";
@@ -260,7 +261,9 @@ async function handleChatCompletion(req, res) {
 // Initialize Express app and use middlewares
 const app = express();
 app.use(bodyParser.json());
-app.use(enableCORS);
+// app.use(enableCORS);
+
+app.use(cors());
 
 // Route to handle POST requests for chat completions
 app.post("/v1/chat/completions", handleChatCompletion);
