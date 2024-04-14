@@ -1,7 +1,7 @@
 version: "3.3"
 services:
     api:
-        container_name: gptapi
+        container_name: gpt-api
         build:
             context: ./
             target: gptapi
