@@ -1,6 +1,6 @@
 const axios = require("axios");
 
-const API_URL = "http://46.250.227.243:3040/v1/chat/completions";
+const API_URL = "http://46.250.227.243:3310/v1/chat/completions";
 
 const prompt = "berikan saya rekomendasi pencarian singkat hari ini";
 
@@ -19,7 +19,7 @@ const config = {
 axios
     .post(API_URL, data, config)
     .then((response) => {
-        console.log(response.data.choices[0].message.content);
+        console.log(response);
     })
     .catch((error) => {
         console.error(error);

@@ -19,6 +19,6 @@ RUN yarn install
 
 COPY . .
 
-EXPOSE 3040
+# EXPOSE 3040
 
 CMD [ "node", "app.js" ] 
