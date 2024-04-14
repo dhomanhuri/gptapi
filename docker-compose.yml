@@ -1,0 +1,10 @@
+version: "3.7"
+services:
+    api:
+        container_name: gptapi
+        build:
+            context: ./
+            target: gptapi
+        ports:
+            - 3310:3310
+        restart: always
