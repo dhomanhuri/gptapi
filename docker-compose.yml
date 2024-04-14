@@ -4,7 +4,6 @@ services:
         container_name: gpt-api
         build:
             context: ./
-            target: gptapi
         ports:
             - 3310:3310
         restart: always
