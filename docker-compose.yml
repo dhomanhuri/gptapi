@@ -5,5 +5,5 @@ services:
         build:
             context: ./
         ports:
-            - 3310:3040
+            - 3040:3040
         restart: always

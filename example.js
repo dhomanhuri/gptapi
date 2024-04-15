@@ -1,8 +1,8 @@
 const axios = require("axios");
 
-const API_URL = "http://46.250.227.243:3310/v1/chat/completions";
+const API_URL = "http://127.0.0.1:3040/v1/chat/completions";
 
-const prompt = "berikan saya rekomendasi pencarian singkat hari ini";
+const prompt = "siapa anda?";
 
 const data = {
     model: "gpt-3.5-turbo",
@@ -19,7 +19,7 @@ const config = {
 axios
     .post(API_URL, data, config)
     .then((response) => {
-        console.log(response);
+        console.log(response.data.choices[0].message.content);
     })
     .catch((error) => {
         console.error(error);
