@@ -103,15 +103,28 @@ async function getNewSessionId() {
 }
 
 // Middleware to enable CORS and handle pre-flight requests
-function enableCORS(req, res, next) {
-    res.header("Access-Control-Allow-Origin", "*");
-    res.header("Access-Control-Allow-Headers", "*");
-    res.header("Access-Control-Allow-Methods", "GET, POST, OPTIONS");
+// function enableCORS(req, res, next) {
+//     res.header("Access-Control-Allow-Origin", "*");
+//     res.header("Access-Control-Allow-Headers", "*");
+//     res.header("Access-Control-Allow-Methods", "GET, POST, OPTIONS");
+//     if (req.method === "OPTIONS") {
+//         return res.status(200).end();
+//     }
+//     next();
+// }
+
+const enableCORS = (req, res, next) => {
+    res.setHeader("Access-Control-Allow-Origin", "*");
+    res.setHeader("Access-Control-Allow-Methods", "GET, POST, OPTIONS");
+    res.setHeader("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept, Authorization");
+
+    // Handle preflight requests
     if (req.method === "OPTIONS") {
-        return res.status(200).end();
+        res.status(200).end();
+    } else {
+        next();
     }
-    next();
-}
+};
 
 // Middleware to handle chat completions
 async function handleChatCompletion(req, res) {
