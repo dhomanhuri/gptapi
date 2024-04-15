@@ -296,6 +296,7 @@ app.listen(port, "0.0.0.0", () => {
                 await getNewSessionId();
                 await wait(refreshInterval);
             } catch (error) {
+                console.log(error);
                 console.error("Error refreshing session ID, retrying in 1 minute...");
                 console.error("If this error persists, your country may not be supported yet.");
                 console.error("If your country was the issue, please consider using a U.S. VPN.");
