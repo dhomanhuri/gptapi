@@ -1,8 +1,8 @@
 const axios = require("axios");
 
-const API_URL = "http://127.0.0.1:3040/v1/chat/completions";
+const API_URL = "http://149.129.192.245:3040/v1/chat/completions";
 
-const prompt = "siapa anda?";
+const prompt = "berikan saya 5 rekomendasi pencarian singkat";
 
 const data = {
     model: "gpt-3.5-turbo",

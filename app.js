@@ -262,9 +262,9 @@ async function handleChatCompletion(req, res) {
 // Initialize Express app and use middlewares
 const app = express();
 app.use(bodyParser.json());
-// app.use(enableCORS);
+app.use(enableCORS);
 
-app.use(cors());
+// app.use(cors());
 
 // Route to handle POST requests for chat completions
 app.post("/v1/chat/completions", handleChatCompletion);
