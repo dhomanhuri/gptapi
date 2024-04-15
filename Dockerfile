@@ -9,9 +9,9 @@ WORKDIR /usr/src/app
 # RUN apk add tzdata
 # RUN apk add chromium
 # RUN apk add curl
-RUN cp /usr/share/zoneinfo/Asia/Jakarta /etc/localtime
-RUN echo "Asia/Jakarta" >  /etc/timezone
-RUN date
+# RUN cp /usr/share/zoneinfo/Asia/Jakarta /etc/localtime
+# RUN echo "Asia/Jakarta" >  /etc/timezone
+# RUN date
 
 COPY package*.json ./
 RUN yarn install
