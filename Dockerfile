@@ -14,7 +14,7 @@ WORKDIR /usr/src/app
 # RUN date
 
 COPY package*.json ./
-RUN yarn install
+# RUN yarn install
 
 # COPY public ./public
 
