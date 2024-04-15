@@ -84,6 +84,7 @@ const axiosInstance = axios.create({
 // Function to get a new session ID and token from the OpenAI API
 async function getNewSessionId() {
     let newDeviceId = randomUUID();
+    console.log(newDeviceId);
     const response = await axiosInstance.post(
         `${baseUrl}/backend-anon/sentinel/chat-requirements`,
         {},
